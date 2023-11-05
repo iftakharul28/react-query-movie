@@ -26,11 +26,16 @@ export default function Movice() {
     },
   });
 
-  if (isPending) return 'Loading...';
+  if (isPending)
+    return (
+      <section className='pt-9 bg-primary min-h-[calc(100vh_-_64px)] grid place-items-center'>
+        <p className='text-xl text-white'>Loading...</p>
+      </section>
+    );
 
   if (error) return 'An error has occurred: ' + error;
   return (
-    <section className='pt-9 bg-primary'>
+    <section className='pt-9 bg-primary min-h-[calc(100vh_-_64px)]'>
       <div className='grid grid-cols-[1fr,_300px] gap-4 container'>
         {/* <pre className='h-48 overflow-auto'>{JSON.stringify(data, null, 2)}</pre> */}
         <div className='section-left'>

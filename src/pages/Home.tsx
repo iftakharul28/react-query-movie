@@ -36,9 +36,21 @@ export default function HomePage() {
     },
   });
 
-  if (isPending) return 'Loading...';
+  if (isPending) {
+    return (
+      <section className='pt-9 bg-primary min-h-[calc(100vh_-_64px)] grid place-items-center'>
+        <p className='text-xl text-white'>Loading...</p>
+      </section>
+    );
+  }
 
-  if (error) return 'An error has occurred: ' + error;
+  if (error) {
+    return (
+      <section className='pt-9 bg-primary min-h-[calc(100vh_-_64px)] grid place-items-center'>
+        <p className='text-xl text-white'>{'An error has occurred: ' + error}</p>
+      </section>
+    );
+  }
   return (
     <div className='py-9 bg-primary min-h-[calc(100vh_-_64px)]'>
       <div className='container grid grid-cols-[repeat(auto-fill,_minmax(220px,_1fr))] gap-3 pb-10'>
