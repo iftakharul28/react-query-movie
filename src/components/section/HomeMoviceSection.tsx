@@ -29,7 +29,7 @@ export default function HomeMoviceSection(props: Props) {
   });
   if (isPending) {
     return (
-      <section className='pt-9 bg-primary min-h-[calc(100vh_-_64px)] grid place-items-center'>
+      <section className='pt-9 bg-primary min-h-[60px] grid place-items-center'>
         <p className='text-xl text-white'>Loading...</p>
       </section>
     );
@@ -37,7 +37,7 @@ export default function HomeMoviceSection(props: Props) {
 
   if (error) {
     return (
-      <section className='pt-9 bg-primary min-h-[calc(100vh_-_64px)] grid place-items-center'>
+      <section className='pt-9 bg-primary min-h-[60px] grid place-items-center'>
         <p className='text-xl text-white'>{'An error has occurred: ' + error}</p>
       </section>
     );

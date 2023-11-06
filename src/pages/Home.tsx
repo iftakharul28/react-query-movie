@@ -1,9 +1,9 @@
-import HomeMoviceSection from '../components/section/HomeMoviceSection';
-import HomeSerieSection from '../components/section/HomeSerieSection';
+import HomeMoviceSection from '../components/section/HomeMoviceSection.tsx';
+import HomeSerieSection from '../components/section/HomeSerieSection.tsx';
 
 export default function HomePage() {
-  const movies = ['John Wick', 'Mission Impossible', 'Harry Potter'];
-  const series = ['Friends', 'Loki', '007'];
+  const movies = ['John Wick', 'Mission Impossible', 'Harry Potter', 'James Bond'];
+  const series = ['Friends', 'Loki'];
   return (
     <div className='py-9 bg-primary min-h-[calc(100vh_-_64px)]'>
       <div className='container'>
