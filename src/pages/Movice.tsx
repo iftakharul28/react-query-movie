@@ -7,11 +7,13 @@ import toast from '../lib/toast.ts';
 
 export default function Movice() {
   const { moviceId } = useParams();
+  console.log(moviceId, 'starting');
   const { isPending, error, data } = useQuery<moviceDetailsType>({
     queryKey: ['movice_details', moviceId],
     staleTime: 180,
-    queryFn: async () => {
+    queryFn: async (query) => {
       try {
+        console.log(moviceId, query.queryKey, 'fetching...');
         const response = await http.get({ path: `&i=${moviceId}&Plot=full` });
         if (!response?.ok) {
           throw new Error('Network response was not ok');

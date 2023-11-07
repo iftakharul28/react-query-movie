@@ -3,7 +3,7 @@ import type { moviceCardType } from '../../model/movice';
 
 export default function MoviceCard(props: moviceCardType) {
   return (
-    <Link className=' bg-secondary max-w-full' to={`/movie/${props.imdbID}`}>
+    <Link className=' bg-secondary max-w-full' to={`/movice/${props.imdbID}`}>
       <div className='max-h-72 h-full overflow-hidden'>
         <img className='h-full w-full' src={props.Poster} alt={props.Title} />
       </div>

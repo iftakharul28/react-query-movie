@@ -7,7 +7,7 @@ export default function Router() {
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path='movie/:moviceId' element={<Movice />} />
+        <Route path='movice/:moviceId' element={<Movice />} />
       </Route>
     </Routes>
   );

@@ -15,7 +15,8 @@ export default function HomeSerieSection(props: Props) {
   } = useQuery<{ Search: moviceCardType[] }>({
     queryKey: [`series_${props.title}`],
     staleTime: 180,
-    queryFn: async () => {
+    queryFn: async (query) => {
+      console.log(query.queryKey, 'fetching...');
       try {
         const response = await http.get({ path: `&s=${props.title}&type=series` });
         if (!response?.ok) {

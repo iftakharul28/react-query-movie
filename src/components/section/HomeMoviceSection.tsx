@@ -14,7 +14,8 @@ export default function HomeMoviceSection(props: Props) {
   } = useQuery<{ Search: moviceCardType[] }>({
     queryKey: [`movie_${props.title}`],
     staleTime: 180,
-    queryFn: async () => {
+    queryFn: async (query) => {
+      console.log(query.queryKey, 'fetching...');
       try {
         const response = await http.get({ path: `&s=${props.title}&type=movie` });
         if (!response?.ok) {
