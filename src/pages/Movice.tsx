@@ -11,7 +11,6 @@ export default function Movice() {
     queryKey: ['movice_details', moviceId],
     staleTime: 180,
     queryFn: async () => {
-      if (typeof moviceId === 'undefined') return;
       try {
         const response = await http.get({ path: `&i=${moviceId}&Plot=full` });
         if (!response?.ok) {
@@ -22,7 +21,8 @@ export default function Movice() {
       } catch (error: any) {
         return toast.error(error?.message);
       }
-    },
+    }, // The query will not execute until the userId exists
+    enabled: !!moviceId,
   });
 
   if (isPending) {
