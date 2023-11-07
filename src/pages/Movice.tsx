@@ -8,10 +8,10 @@ import toast from '../lib/toast.ts';
 export default function Movice() {
   const { moviceId } = useParams();
   const { isPending, error, data } = useQuery<moviceDetailsType>({
-    queryKey: ['repoData', moviceId],
+    queryKey: ['movice_details', moviceId],
     staleTime: 180,
     queryFn: async () => {
-      if (!moviceId) return;
+      if (typeof moviceId === 'undefined') return;
       try {
         const response = await http.get({ path: `&i=${moviceId}&Plot=full` });
         if (!response?.ok) {

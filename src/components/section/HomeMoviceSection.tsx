@@ -12,7 +12,7 @@ export default function HomeMoviceSection(props: Props) {
     error,
     data: list,
   } = useQuery<{ Search: moviceCardType[] }>({
-    queryKey: [`${props.title}`],
+    queryKey: [`movie_${props.title}`],
     staleTime: 180,
     queryFn: async () => {
       try {
@@ -21,7 +21,7 @@ export default function HomeMoviceSection(props: Props) {
           throw new Error('Network response was not ok');
         }
         return await response.json();
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line
       } catch (error: any) {
         return toast.error(error?.message);
       }

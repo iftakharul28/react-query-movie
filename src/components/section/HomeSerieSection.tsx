@@ -13,7 +13,7 @@ export default function HomeSerieSection(props: Props) {
     error,
     data: list,
   } = useQuery<{ Search: moviceCardType[] }>({
-    queryKey: [`${props.title}`],
+    queryKey: [`series_${props.title}`],
     staleTime: 180,
     queryFn: async () => {
       try {
