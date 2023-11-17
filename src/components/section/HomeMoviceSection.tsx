@@ -12,7 +12,7 @@ export default function HomeMoviceSection(props: Props) {
     error,
     data: list,
   } = useQuery<{ Search: moviceCardType[] }>({
-    queryKey: [`movie_${props.title}`],
+    queryKey: [`movie_${props.title.replace(/\s/g, '_')}`],
     staleTime: 180,
     queryFn: async (query) => {
       console.log(query.queryKey, 'fetching...');
